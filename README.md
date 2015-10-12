@@ -1,39 +1,39 @@
 # Vagrant Master Branch
 
-run as root after installation: /vagrant/install_mysql.sh
-
-## installed services:
+## bootstrap included services:
   - [Nginx](http://nginx.org/) on http://localhost:8080
   - [PhP5-Fpm](http://php-fpm.org/)
   - [MySQL](https://www.mysql.de/)
-  - [PhpMyAdmin](https://www.phpmyadmin.net/) on http://localhost:8080/phpmyadmin/
 
 ### optional installs:
-#
->if you have installed optional scripts, make sure to enable restart commands in /vagrant/restart_services.sh
- #### MySQL Server - phpMyAdmin
-    /vagrant/install_mysql.sh
- 
- #### Java 7- Elasticsearch 1.7.1 - Marvel - packetbeat 1.0.0-beta - Kibana
-     /vagrant/install_elasticsearch.sh
 
->Elasticsearch Home path: /usr/share/elasticsearch -
-config in /etc/elasticsearchElasticsearch.yml
+>run scripts as root, if you have installed optional scripts,<br>
+make sure to enable restart commands in /vagrant/restart_services.sh
+
+#### MySQL Server - phpMyAdmin
+/vagrant/install_mysql.sh
+ 
+#### Java 7- Elasticsearch 1.7.1 - Marvel - packetbeat 1.0.0-beta - Kibana
+ /vagrant/install_elasticsearch.sh
+
+>Elasticsearch Home path: /usr/share/elasticsearch,
+<br>config in /etc/elasticsearch/elasticsearch.yml
 
 ##### Urls:
-* Elasticsearch node: http://localhost:9200/
-* Marvel: http://localhost:9200/_plugin/marvel/
-* Kibana: http://localhost:5601
+* [PhpMyAdmin](https://www.phpmyadmin.net/) on http://localhost:8080/phpmyadmin/
+* [Elasticsearch node](https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html) on: http://localhost:9200/
+* [Marvel](https://www.elastic.co/guide/en/marvel/current/index.html) on: http://localhost:9200/_plugin/marvel/
+* [Kibana](https://www.elastic.co/guide/en/kibana/current/index.html) on: http://localhost:5601
 ## Networking:
 
- * ports forwarded to host maschine:
-   + 22 -> 2222
-   + 80 -> 8080
+* ports forwarded to host maschine:
++ 22 -> 2222
++ 80 -> 8080
 
 * enable service ports in Vagrant File:
-   + MySQL Port: 3306 -> 3306
-   + Elasticsearch node: 9200 -> 9200
-   + Kibana default: 5601 -> 5601
++ MySQL Port: 3306 -> 3306
++ Elasticsearch node: 9200 -> 9200
++ Kibana default: 5601 -> 5601
 
 ## Commands:
 
