@@ -22,8 +22,11 @@ cp /vagrant/configs/nginx/default /etc/nginx/sites-available/default
 apt-get install -y --force-yes apache2-utils
 service nginx restart
 
-chmod +x /vagrant/install_mysql.sh
-chown vagrant:vagrant user /vagrant/install_mysql.sh
+chmod +x /vagrant/install_*.sh
 
-echo "to enter the vagrant use -> vagrant ssh"
-echo "run as root after installation: /vagrant/install_mysql.sh"
+echo "\nto enter the vagrant use -> vagrant ssh\n"
+echo "for mysql install run:"
+echo "\t /vagrant/install_mysql.sh"
+echo "\nfor elasticsearch:"
+echo "\t /vagrant/install_elasticsearch.sh"
+echo "!!AS ROOT!!"
