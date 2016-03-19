@@ -1,24 +1,33 @@
-# Vagrant Master Branch
+## Vagrant Master Branch
 
-## bootstrap included services:
+### bootstrap included services:
   - [Nginx](http://nginx.org/) on http://localhost:8080
   - [PhP5-Fpm](http://php-fpm.org/)
-  - [MySQL](https://www.mysql.de/)
 
 ### optional installs:
 
->run scripts as root, if you have installed optional scripts,<br>
+>run scripts as root, if you have installed optional scripts,
 make sure to enable restart commands in /vagrant/restart_services.sh
 
-#### MySQL Server - phpMyAdmin
-/vagrant/install_mysql.sh
- 
-#### Java 7- Elasticsearch 1.7.1 - Marvel - packetbeat 1.0.0-beta - Kibana
- /vagrant/install_elasticsearch.sh
 
->Elasticsearch Home path: /usr/share/elasticsearch,
+### MySQL Server - phpMyAdmin
+script path: configs/installs/debian/install_mysql.sh
+
+ ##### [MySQL](https://www.mysql.de/)
+<br>
+### Elasticsearch
+script path: configs/installs/debian/install_elasticsearch.sh
 <br>config in /etc/elasticsearch/elasticsearch.yml
 
+##### [Java 8](http://www.oracle.com/technetwork/java/javase/overview/java8-2100321.html)
+##### [Elasticsearch 2.2.0](https://www.elastic.co/products/elasticsearch)
+##### [Kibana 4.4.1](https://www.elastic.co/products/kibana)
+##### [Marvel](https://www.elastic.co/products/marvel)
+##### [Packetbeat 1.1.1](https://www.elastic.co/products/beats)
+##### [Filebeat 1.1.1](https://www.elastic.co/products/beats)
+##### [Logstash 2.2.2](https://www.elastic.co/products/logstash)
+
+<br>
 ##### Urls:
 * [PhpMyAdmin](https://www.phpmyadmin.net/) on http://localhost:8080/phpmyadmin/
 * [Elasticsearch node](https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html) on: http://localhost:9200/
@@ -37,15 +46,15 @@ make sure to enable restart commands in /vagrant/restart_services.sh
 
 ## Commands:
 
-> basic vagrant commands: 
-# 
+> basic vagrant commands:
+#
      vagrant <up, halt, destroy, init... >
  #
- > controll services: 
+ > controll services:
   #
      /etc/init.d/<service name> <start, restart, stop>
- 
+
 ## Directories:
 
- - Nginx shared folder: /usr/share/nginx/www 
+ - Nginx shared folder: /usr/share/nginx/www
  - package installation: /usr/packages/
