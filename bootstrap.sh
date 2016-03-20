@@ -10,8 +10,8 @@ PACKAGE_PATH=/usr/packages/
 echo "installing: Nginx + Php-fpm"
 
 apt-get update -y \
-    && apt-get install -y --force-yes git wget curl nano screen \
-    && apt-get install -y --force-yes build-essential
+    && apt-get install -y --force-yes build-essential \
+    && apt-get install -y --force-yes git wget curl nano screen
 
 apt-get install -y --force-yes php5-fpm
 cp /vagrant/configs/php-fpm/php.ini /etc/php5/fpm/php.ini

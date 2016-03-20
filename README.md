@@ -1,8 +1,8 @@
-## Vagrant Master Branch
+## Dev Vagrant - Master Branch
 
-### bootstrap included services:
-  - [Nginx](http://nginx.org/) on http://localhost:8080
-  - [PhP5-Fpm](http://php-fpm.org/)
+#### bootstrap included services:
+  [Nginx](http://nginx.org/) on http://localhost:8080
+  [PhP5-Fpm](http://php-fpm.org/)
 
 ### optional installs:
 
@@ -10,22 +10,22 @@
 make sure to enable restart commands in /vagrant/restart_services.sh
 
 
-### MySQL Server - phpMyAdmin
+### - MySQL Server - phpMyAdmin
 script path: configs/installs/debian/install_mysql.sh
 
- ##### [MySQL](https://www.mysql.de/)
+#### [MySQL](https://www.mysql.de/)
 <br>
-### Elasticsearch
+### - Elasticsearch
 script path: configs/installs/debian/install_elasticsearch.sh
 <br>config in /etc/elasticsearch/elasticsearch.yml
 
-##### [Java 8](http://www.oracle.com/technetwork/java/javase/overview/java8-2100321.html)
-##### [Elasticsearch 2.2.0](https://www.elastic.co/products/elasticsearch)
-##### [Kibana 4.4.1](https://www.elastic.co/products/kibana)
-##### [Marvel](https://www.elastic.co/products/marvel)
-##### [Packetbeat 1.1.1](https://www.elastic.co/products/beats)
-##### [Filebeat 1.1.1](https://www.elastic.co/products/beats)
-##### [Logstash 2.2.2](https://www.elastic.co/products/logstash)
+#### [Java 8](http://www.oracle.com/technetwork/java/javase/overview/java8-2100321.html)
+#### [Elasticsearch 2.2.0](https://www.elastic.co/products/elasticsearch)
+#### [Kibana 4.4.1](https://www.elastic.co/products/kibana)
+#### [Marvel](https://www.elastic.co/products/marvel)
+#### [Packetbeat 1.1.1](https://www.elastic.co/products/beats)
+#### [Filebeat 1.1.1](https://www.elastic.co/products/beats)
+#### [Logstash 2.2.2](https://www.elastic.co/products/logstash)
 
 <br>
 ##### Urls:
