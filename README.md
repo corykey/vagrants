@@ -17,14 +17,20 @@ build-essential, git, wget, nano, curl
 #
 	sudo /vagrant/configs/installs/debian/install_nginx.sh
 #
+###### URLS:
+* [Nginx](http://nginx.org/) on http://localhost:8000
 ***
 ### [MySQL Server](https://www.mysql.de/) + [phpMyAdmin](https://www.phpmyadmin.net/)
 ###### enable port 3306 in Vagrantfile for MySQL-Server!
 #
 	sudo /vagrant/configs/installs/debian/install_mysql.sh
 #
+
+###### URLS:
+* [MySQL](https://www.mysql.de/) on localhost:3306
+* [PhpMyAdmin](https://www.phpmyadmin.net/) on http://localhost:8000/phpmyadmin/
 ***
-### Elasticsearch Stack
+### [Elasticsearch Stack](https://www.elastic.co/)
 ###### enable port 9200 + 5601 in Vagrantfile for node and kibana!
 install:
 #
@@ -44,18 +50,17 @@ config gets placed in /etc/elasticsearch/elasticsearch.yml
 <br>
 
 #### [Java 8](http://www.oracle.com/technetwork/java/javase/overview/java8-2100321.html)
-#### [Elasticsearch 2.2.0](https://www.elastic.co/products/elasticsearch)
-#### [Kibana 4.4.1](https://www.elastic.co/products/kibana)
-#### [Marvel](https://www.elastic.co/products/marvel)
-#### [Packetbeat 1.1.1](https://www.elastic.co/products/beats)
-#### [Filebeat 1.1.1](https://www.elastic.co/products/beats)
-#### [Logstash 2.2.2](https://www.elastic.co/products/logstash)
+#### [Elasticsearch 2.3.1](https://www.elastic.co/products/elasticsearch)
+#### [Kibana 4.5.0](https://www.elastic.co/products/kibana)
+#### [Marvel 2.0](https://www.elastic.co/products/marvel)
+#### [Packetbeat 1.2.0](https://www.elastic.co/products/beats)
+#### [Filebeat 1.2.0](https://www.elastic.co/products/beats)
+#### [Logstash 2.3.0-1](https://www.elastic.co/products/logstash)
 
 
-##### Urls:
-* [PhpMyAdmin](https://www.phpmyadmin.net/) on http://localhost:8080/phpmyadmin/
-* [Elasticsearch node](https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html) on: http://localhost:9200/
-* [Marvel](https://www.elastic.co/guide/en/marvel/current/index.html) on: http://localhost:9200/_plugin/marvel/
+###### URLs:
+* [node](https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html) on: http://localhost:9200/
+* [Marvel](https://www.elastic.co/guide/en/marvel/current/index.html) on: http://localhost:5601/app/marvel
 * [Kibana](https://www.elastic.co/guide/en/kibana/current/index.html) on: http://localhost:5601
 ## Networking:
 
@@ -87,4 +92,5 @@ config gets placed in /etc/elasticsearch/elasticsearch.yml
 ***
 >
 Contact: <dev@corykey.com>
+<br>CK - 2016
 >
