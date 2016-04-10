@@ -1,23 +1,47 @@
 ## Dev Vagrant - Master Branch
 
-#### bootstrap included services:
-  [Nginx](http://nginx.org/) on http://localhost:8080
-  [PhP5-Fpm](http://php-fpm.org/)
+#### Requirements:
++ [VirtualBox 5.0](https://www.virtualbox.org/wiki/Downloads)
++ Development Environment: [Vagrant](https://www.vagrantup.com/downloads.html)
+
+#### bootstrap included apt-packages:
+build-essential, git, wget, nano, curl
 
 ### optional installs:
 
->run scripts as root, if you have installed optional scripts,
-make sure to enable restart commands in /vagrant/restart_services.sh
+>executable install scripts in /vagrant/configs/installs/debian/<br>
+>elasticsearch, mysql, nginx, rethinkdb
+***
+### [Nginx](http://nginx.org/) + [php-fpm](http://php-fpm.org/)
 
+#
+	sudo /vagrant/configs/installs/debian/install_nginx.sh
+#
+***
+### [MySQL Server](https://www.mysql.de/) + [phpMyAdmin](https://www.phpmyadmin.net/)
+###### enable port 3306 in Vagrantfile for MySQL-Server!
+#
+	sudo /vagrant/configs/installs/debian/install_mysql.sh
+#
+***
+### Elasticsearch Stack
+###### enable port 9200 + 5601 in Vagrantfile for node and kibana!
+install:
+#
+	sudo /vagrant/configs/installs/debian/install_elasticsearch.sh
+#
 
-### - MySQL Server - phpMyAdmin
-script path: configs/installs/debian/install_mysql.sh
-
-#### [MySQL](https://www.mysql.de/)
+run Kibana:
+#
+	sudo /home/elasticsearch/kibana-*/bin/kibana
+#
+run Kibana in a screen, attach to screen:
+#
+	screen -dmS kibana sudo /home/elasticsearch/kibana-*/bin/kibana
+    screen -x kibana
+#
+config gets placed in /etc/elasticsearch/elasticsearch.yml
 <br>
-### - Elasticsearch
-script path: configs/installs/debian/install_elasticsearch.sh
-<br>config in /etc/elasticsearch/elasticsearch.yml
 
 #### [Java 8](http://www.oracle.com/technetwork/java/javase/overview/java8-2100321.html)
 #### [Elasticsearch 2.2.0](https://www.elastic.co/products/elasticsearch)
@@ -27,7 +51,7 @@ script path: configs/installs/debian/install_elasticsearch.sh
 #### [Filebeat 1.1.1](https://www.elastic.co/products/beats)
 #### [Logstash 2.2.2](https://www.elastic.co/products/logstash)
 
-<br>
+
 ##### Urls:
 * [PhpMyAdmin](https://www.phpmyadmin.net/) on http://localhost:8080/phpmyadmin/
 * [Elasticsearch node](https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html) on: http://localhost:9200/
@@ -58,3 +82,9 @@ script path: configs/installs/debian/install_elasticsearch.sh
 
  - Nginx shared folder: /usr/share/nginx/www
  - package installation: /usr/packages/
+
+
+***
+>
+Contact: <dev@corykey.com>
+>

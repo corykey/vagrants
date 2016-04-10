@@ -8,6 +8,17 @@
 mkdir -p /home/elasticsearch
 ELASTICSEARCH_PATH=/home/elasticsearch
 
+# Elasticsearch
+ES_VERSION=2.3.1
+# Packetbeat
+PB_VERSION=1.2.0
+# FileBeat
+FB_VERSION=1.2.0
+# Logstash
+LS_VERSION=2.3.0-1
+# Kibana
+KB_VERSION=4.5.0
+
 echo "INSTALLING: Java 8"
 echo "deb http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main" | tee /etc/apt/sources.list.d/webupd8team-java.list
 echo "deb-src http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main" | tee -a /etc/apt/sources.list.d/webupd8team-java.list
@@ -18,7 +29,7 @@ apt-key adv --keyserver keyserver.ubuntu.com --recv-keys EEA14886 \
 
 echo "INSTALLING: Elasticsearch"
 cd $ELASTICSEARCH_PATH \
-    && wget "https://download.elasticsearch.org/elasticsearch/release/org/elasticsearch/distribution/deb/elasticsearch/2.2.0/elasticsearch-2.2.0.deb" \
+    && wget "https://download.elastic.co/elasticsearch/release/org/elasticsearch/distribution/deb/elasticsearch/${ES_VERSION}/elasticsearch-${ES_VERSION}.deb" \
     && dpkg -i elasticsearch-*.deb \
     && update-rc.d elasticsearch defaults 95 10 \
     && cp /etc/elasticsearch/elasticsearch.yml /etc/elasticsearch/elasticsearch.clean \
@@ -33,30 +44,23 @@ cd /usr/share/elasticsearch \
 
 echo "INSTALLING: Packetbeat"
 apt-get install -y --force-yes libpcap0.8 && cd $ELASTICSEARCH_PATH \
-    && wget "https://download.elastic.co/beats/packetbeat/packetbeat_1.1.1_amd64.deb" \
+    && wget "https://download.elastic.co/beats/packetbeat/packetbeat_${PB_VERSION}_amd64.deb" \
     && dpkg -i packetbeat*.deb
 
 echo "INSTALLING: Filebeat"
 cd $ELASTICSEARCH_PATH \
-    && wget "https://download.elastic.co/beats/filebeat/filebeat_1.1.1_amd64.deb" \
+    && wget "https://download.elastic.co/beats/filebeat/filebeat_${FB_VERSION}_amd64.deb" \
     && dpkg -i filebeat*.deb
 
 echo "INSTALLING: Logstash"
 cd $ELASTICSEARCH_PATH \
-    && wget "https://download.elastic.co/logstash/logstash/packages/debian/logstash_2.2.2-1_all.deb" \
+    && wget "https://download.elastic.co/logstash/logstash/packages/debian/logstash_${LS_VERSION}_all.deb" \
     && dpkg -i logstash*.deb \
     && service elasticsearch restart
 
 echo "INSTALLING: Kibana"
 cd $ELASTICSEARCH_PATH \
-    && wget "https://download.elastic.co/kibana/kibana/kibana-4.4.1-linux-x64.tar.gz" \
+    && wget "https://download.elastic.co/kibana/kibana/kibana-${KB_VERSION}-linux-x64.tar.gz" \
     && tar -zxf kibana*.tar.gz \
     && cd kibana* \
     && bin/kibana plugin --install elasticsearch/marvel/latest
-
-echo "service elasticsearch start;" >> /vagrant/start_all.sh
-echo "service filebeat start;" >> /vagrant/start_all.sh
-echo "service packetbeat start;" >> /vagrant/start_all.sh
-echo "screen -dmS kibana /home/elasticsearch/kibana-4.4.1-linux-x64/bin/kibana" >> /vagrant/start_all.sh
-
-chmod 755 /vagrant/start_all.sh && /vagrant/start_all.sh
