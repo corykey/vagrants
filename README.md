@@ -11,15 +11,19 @@ build-essential, git, wget, nano, curl
 
 >executable install scripts in /vagrant/configs/installs/debian/<br>
 >elasticsearch, mysql, nginx, rethinkdb
+
 ***
+
 ### [Nginx](http://nginx.org/) + [php-fpm](http://php-fpm.org/)
 
 #
 	sudo /vagrant/configs/installs/debian/install_nginx.sh
 #
 ###### URLS:
-* [Nginx](http://nginx.org/) on http://localhost:8000
++ [Nginx](http://nginx.org/) on http://localhost:8000
+
 ***
+
 ### [MySQL Server](https://www.mysql.de/) + [phpMyAdmin](https://www.phpmyadmin.net/)
 ###### enable port 3306 in Vagrantfile for MySQL-Server!
 #
@@ -27,10 +31,12 @@ build-essential, git, wget, nano, curl
 #
 
 ###### URLS:
-* [MySQL](https://www.mysql.de/) on localhost:3306
-* [PhpMyAdmin](https://www.phpmyadmin.net/) on http://localhost:8000/phpmyadmin/
++ [MySQL](https://www.mysql.de/) on localhost:3306
++ [PhpMyAdmin](https://www.phpmyadmin.net/) on http://localhost:8000/phpmyadmin/
+
 ***
-### [Elasticsearch Stack](https://www.elastic.co/)
+
+### [Elasticsearch](https://www.elastic.co/)
 ###### enable port 9200 + 5601 in Vagrantfile for node and kibana!
 install:
 #
@@ -59,9 +65,9 @@ config gets placed in /etc/elasticsearch/elasticsearch.yml
 
 
 ###### URLs:
-* [node](https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html) on: http://localhost:9200/
-* [Marvel](https://www.elastic.co/guide/en/marvel/current/index.html) on: http://localhost:5601/app/marvel
-* [Kibana](https://www.elastic.co/guide/en/kibana/current/index.html) on: http://localhost:5601
++ [node](https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html) on: http://localhost:9200/
++ [Marvel](https://www.elastic.co/guide/en/marvel/current/index.html) on: http://localhost:5601/app/marvel
++ [Kibana](https://www.elastic.co/guide/en/kibana/current/index.html) on: http://localhost:5601
 ## Networking:
 
 * ports forwarded to host maschine:
