@@ -1,8 +1,8 @@
 ## Dev Vagrant - Master Branch
 
 #### Requirements:
-+ [VirtualBox 5.0](https://www.virtualbox.org/wiki/Downloads)
-+ [Oracle VM VirtualBox Extension Pack](http://download.virtualbox.org/virtualbox/5.1.4/Oracle_VM_VirtualBox_Extension_Pack-5.1.4-110228.vbox-extpack)
++ Newest version of [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
++ get the [Oracle VM VirtualBox Extension Pack](http://download.virtualbox.org/virtualbox/5.1.4/Oracle_VM_VirtualBox_Extension_Pack-5.1.4-110228.vbox-extpack)
 + Development Environment: [Vagrant](https://www.vagrantup.com/downloads.html)
 
 #### bootstrap included apt-packages:
@@ -15,6 +15,25 @@ build-essential, git, wget, nano, curl
 
 ***
 
+### [node.js](https://nodejs.org) + [vue.js](https://vuejs.org)
+clones [a fork](https://github.com/corykey/node) of the official [node.js source-code](https://github.com/nodejs/node).<br>It will compile by default branch v4.x with is needed for [vue.js](https://vuejs.org)
+######
+#
+	sudo /vagrant/configs/installs/debian/install_vue.sh
+#
+###### create an Vue-App with and webpack boilerplate by using:
+#
+	cd /vagrant
+    vue init webpack <app-name>
+
+	cd <app-name>
+	npm install
+#
+###### to run the app, use:
+#
+	npm run dev
+#
+###### the Vue-App will run on http://localhost:8080
 ### [Nginx](http://nginx.org/) + [php-fpm](http://php-fpm.org/)
 
 #
