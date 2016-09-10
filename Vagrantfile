@@ -28,7 +28,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Rethink Client Port
   #config.vm.network :forwarded_port, guest: 28015, host: 28015
 
-  # Rethink WebUI
+  # Rethink WebUI or VueJS App
   #config.vm.network :forwarded_port, guest: 8080, host: 8080
 
 end
