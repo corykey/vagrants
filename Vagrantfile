@@ -5,10 +5,8 @@ VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
-  config.vm.box = "RAC-development-Vagrant"
-
-   # centos-7 config.vm.box_url = "https://github.com/tommy-muehle/puppet-vagrant-boxes/releases/download/1.1.0/centos-7.0-x86_64.box"
-  config.vm.box_url = "https://atlas.hashicorp.com/ARTACK/boxes/debian-jessie"
+  config.vm.box = "ARTACK/debian-jessie"
+  config.vm.box_url = "http://blackforestcrafting.de/boxes/debian-jessie.box"
 
   config.vm.provider :virtualbox do |vb|
     vb.customize ["modifyvm", :id, "--memory", "2048", "--cpus", "2", "--ioapic", "on"]

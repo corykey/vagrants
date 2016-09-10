@@ -2,6 +2,7 @@
 
 #### Requirements:
 + [VirtualBox 5.0](https://www.virtualbox.org/wiki/Downloads)
++ [Oracle VM VirtualBox Extension Pack](http://download.virtualbox.org/virtualbox/5.1.4/Oracle_VM_VirtualBox_Extension_Pack-5.1.4-110228.vbox-extpack)
 + Development Environment: [Vagrant](https://www.vagrantup.com/downloads.html)
 
 #### bootstrap included apt-packages:
@@ -96,7 +97,6 @@ config gets placed in /etc/elasticsearch/elasticsearch.yml
 
 
 ***
->
+
 Contact: <dev@corykey.com>
 <br>CK - 2016
->
