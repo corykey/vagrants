@@ -16,7 +16,7 @@ build-essential, git, wget, nano, curl
 ***
 
 ### [node.js](https://nodejs.org) + [vue.js](https://vuejs.org)
-clones [a fork](https://github.com/corykey/node) of the official [node.js source-code](https://github.com/nodejs/node).<br>It will compile by default branch v4.x with is needed for [vue.js](https://vuejs.org)
+clones [a fork](https://github.com/corykey/node) of the official [node.js source-code](https://github.com/nodejs/node).<br>It will compile by default branch v4.x wich is needed for [vue.js](https://vuejs.org)
 ######
 #
 	sudo /vagrant/configs/installs/debian/install_vue.sh
@@ -91,13 +91,15 @@ config gets placed in /etc/elasticsearch/elasticsearch.yml
 ## Networking:
 
 * ports forwarded to host maschine:
-+ 22 -> 2222
-+ 80 -> 8080
+	+ 22 -> 2222
+	+ 80 -> 8000
 
 * enable service ports in Vagrant File:
-+ MySQL Port: 3306 -> 3306
-+ Elasticsearch node: 9200 -> 9200
-+ Kibana default: 5601 -> 5601
+	+ MySQL: 3306 -> 3306
+	+ Kibana: 5601 -> 5601
+	+ Nginx: 80->8000
+	+ Vue-App: 8080 -> 8080
+	+ Elasticsearch node: 9200 -> 9200
 
 ## Commands:
 
