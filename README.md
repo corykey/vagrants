@@ -11,7 +11,7 @@ build-essential, git, wget, nano, curl
 ### optional installs:
 
 >executable install scripts in /vagrant/configs/installs/debian/<br>
->elasticsearch, mysql, nginx, rethinkdb
+>elasticsearch, mysql, nginx, rethinkdb, golang, nodeJS
 
 ***
 
@@ -34,6 +34,17 @@ clones [a fork](https://github.com/corykey/node) of the official [node.js source
 	npm run dev
 #
 ###### the Vue-App will run on http://localhost:8080
+
+***
+
+### [Golang](https://golang.org/)
+Version 1.7.3<br>GOPATH=/vagrant/gospace
+#
+	sudo /vagrant/configs/installs/debian/install_golang.sh
+#
+
+***
+
 ### [Nginx](http://nginx.org/) + [php-fpm](http://php-fpm.org/)
 
 #
